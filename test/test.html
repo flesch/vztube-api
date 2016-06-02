@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>@vztube/vztube-api</title>
+</head>
+<body>
+<code>Open the console...</code>
+<script src="../releases/vztube-api-latest.js"></script>
+<script>
+(function(){
+
+  vztube.api('9297', function(err, data){
+    console.log('vztube.api(\'9297\', callback):', JSON.stringify(data, null, 2));
+  });
+
+  vztube.access('vztube.verizon.com', function(err, access){
+    console.log('vztube.access(\'vztube.verizon.com\', callback):', access);
+  });
+
+  vztube.detect(function(err, domain){
+    console.log('vztube.detect(callback):', domain);
+  });
+
+  vztube.rewrite('https://vztube.vzwcorp.com/videos/9297/uploading-to-vztube', function(err, url){
+    console.log('vztube.rewrite(\'https://vztube.vzwcorp.com/videos/9297/uploading-to-vztube\', callback):', url);
+  });
+
+})();
+</script>
+</body>
+</html>

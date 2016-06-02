@@ -1,0 +1,40 @@
+{
+  "name": "@vztube/vztube-api",
+  "description": "VZTube JSON-P API wrapper",
+  "version": "1.0.0",
+  "author": "John Flesch <john@fles.ch>",
+  "bugs": {
+    "url": "https://github.com/vztube/vztube-api"
+  },
+  "dependencies": {
+    "async": "^2.0.0-rc.5",
+    "callback-timeout": "2.0.0",
+    "jsonp": "0.2.0",
+    "load-img": "^1.0.0",
+    "object-assign": "^4.1.0",
+    "simple-memoize": "1.0.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "browserify": "^13.0.1"
+  },
+  "homepage": "https://github.com/vztube/vztube-api#readme",
+  "keywords": [
+    "vztube"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vztube/vztube-api.git"
+  },
+  "scripts": {
+    "bundle": "browserify dist/index.js --standalone vztube -o releases/${npm_package_name/@vztube\\//}-$npm_package_version.js",
+    "compile": "babel index.js -o dist/index.js",
+    "latest": "cp releases/${npm_package_name/@vztube\\//}-$npm_package_version.js releases/${npm_package_name/@vztube\\//}-latest.js",
+    "release": "npm run compile && npm run bundle && npm run latest",
+    "test": "echo \"Open your browser's JavaScript console...\" && open test/test.html",
+    "echo": "echo ${npm_package_name/@vztube\\//}"
+  }
+}
